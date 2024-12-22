@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- saved from url=(0146)file:///E:/work20240613/%E4%BB%A3%E7%A0%81%E6%A0%87%E6%B3%A820241120/%E4%BB%A3%E7%A0%81%E6%A0%87%E6%B3%A8%E5%81%9A%E9%A2%98%E5%8A%A9%E6%89%8B.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代码标注做题助手</title>
+    <style>
+        textarea {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="textarea1" style="width: 50px; height: 100px;color: red;" readonly="">问题：</textarea>
+    <textarea id="textarea2" style="width: 300px; height: 100px;"></textarea>
+    <textarea id="textarea3" style="width: 50px; height: 100px;color: red;" readonly="">回答1：</textarea>
+<textarea id="textarea4" style="width: 300px; height: 100px;"></textarea>
+    
+<textarea id="textarea5" style="width: 50px; height: 100px;color: red;" readonly="">回答2：</textarea>
+<textarea id="textarea6" style="width: 300px; height: 100px;"></textarea>
+<textarea id="textarea7" style="width: 50px; height: 100px;color: red;" readonly="">回答3：</textarea>
+<textarea id="textarea8" style="width: 300px; height: 100px;"></textarea>
+<textarea id="textarea9" style="width: 50px; height: 100px;color: red;" readonly="">回答4：</textarea>
+<textarea id="textarea10" style="width: 300px; height: 100px;"></textarea>
+    <textarea id="textarea11" style="width: 100px; height: 100px;color: red;" readonly="">请根据以下评判标准, 对上面的</textarea>
+<textarea id="textarea12" style="width: 100px; height: 100px;"></textarea>
+<textarea id="textarea13" style="width: 100px; height: 100px;color: red;" readonly="">个回答进行对比打分。评判标准：</textarea>
+    <textarea id="textarea14" style="width: 200px; height: 100px;"></textarea>
+    <textarea id="textarea15" style="width: 700px; height: 400px;"></textarea>
+    <br>
+    <button onclick="combineText()">合并内容</button>
+    <button onclick="copyText()">复制内容</button>
+    <button onclick="initializeText()">初始化</button>
+    <script>
+        function combineText() {
+            let text1 = document.getElementById("textarea1").value;
+            let text2 = document.getElementById("textarea2").value;
+            let text3 = document.getElementById("textarea3").value;
+            let text4 = document.getElementById("textarea4").value;
+            let text5 = document.getElementById("textarea5").value;
+            let text6 = document.getElementById("textarea6").value;
+            let text7 = document.getElementById("textarea7").value;
+            let text8 = document.getElementById("textarea8").value;
+            let text9 = document.getElementById("textarea9").value;
+            let text10 = document.getElementById("textarea10").value;
+            let text11 = document.getElementById("textarea11").value;
+            let text12 = document.getElementById("textarea12").value;
+            let text13 = document.getElementById("textarea13").value;
+            let text14 = document.getElementById("textarea14").value;
+            let combinedText = text1 + text2 + text3 + text4 + text5 + text6 + text7 +  text8 + text9 + text10 + text11 + text12 + text13 + text14;
+            document.getElementById("textarea15").value = combinedText;
+        }
+
+        function copyText() {
+            let textToCopy = document.getElementById("textarea15").value;
+            navigator.clipboard.writeText(textToCopy);
+        }
+
+        function initializeText() {
+            document.getElementById("textarea1").value = "问题：";
+            document.getElementById("textarea2").value = "";
+            document.getElementById("textarea3").value = "回答1：";
+            document.getElementById("textarea4").value = "";
+            document.getElementById("textarea5").value = "回答2：";            
+            document.getElementById("textarea6").value = "";
+            document.getElementById("textarea7").value = "回答3：";            
+            document.getElementById("textarea8").value = "";
+            document.getElementById("textarea9").value = "回答4：";            
+            document.getElementById("textarea10").value = "";
+            document.getElementById("textarea11").value = "请根据以下评判标准, 对上面的";
+            document.getElementById("textarea12").value = "";
+            document.getElementById("textarea13").value = "个回答进行打分。评判标准：";
+            document.getElementById("textarea14").value = "";
+            document.getElementById("textarea15").value = "";
+
+        }
+    </script>
+<table border="2">
+    <thead>
+        <tr>
+            <th class="readonly" style="width: 50px;">序号</th>
+            <th class="readonly" style="width: 300px;">评分标准</th>
+            <th class="center-align">评分依据</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- 生成10行 -->
+        <script>
+            for (let i = 1; i <= 10; i++) {
+                document.write('<tr>');
+                document.write('<td class="readonly">行 ' + i + ' 列 1</td>');
+                document.write('<td class="readonly">行 ' + i + ' 列 2</td>');
+                document.write('<td contenteditable="true"></td>'); // 可编辑单元格
+                document.write('</tr>');
+            }
+        </script><tr><td class="readonly">行 1 列 1</td><td class="readonly">行 1 列 2</td><td contenteditable="true"><span style="color: rgb(131, 131, 131); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; white-space-collapse: break-spaces; background-color: rgb(58, 58, 60);">01：解决方案多种多样；采用编号说明，结构清晰。但是略显简洁、不够深入、详细、专业。4分
+回答2：</span><span style="color: rgb(131, 131, 131); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; white-space-collapse: break-spaces; background-color: rgb(58, 58, 60);">解决方案多种多样；结构清晰；细节方面深入详细，比如原因、操作、使用建议很专业。5分</span></td></tr><tr><td class="readonly">行 2 列 1</td><td class="readonly">行 2 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 3 列 1</td><td class="readonly">行 3 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 4 列 1</td><td class="readonly">行 4 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 5 列 1</td><td class="readonly">行 5 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 6 列 1</td><td class="readonly">行 6 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 7 列 1</td><td class="readonly">行 7 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 8 列 1</td><td class="readonly">行 8 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 9 列 1</td><td class="readonly">行 9 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 10 列 1</td><td class="readonly">行 10 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">1</td><td class="readonly">1、生成代码是否能够正确执行
+2、若无法正确执行，模型代码修改难易程度
+3、功能点是否全，有无错漏
+4、代码书写习惯是否良好。
+
+</td><td contenteditable="true">01：对错误的分析较全面；解决方案较多，可用性较高。4分。 02：对错误的分析较全面；解决方案较实用，但缺乏深入的细节和步骤。4分 03：对错误的分析全面、准确，涵盖了多个方面；解决方法丰富，可用性高。5分 04：对错误的分析全面、准确，涵盖了多个方面；解决方法丰富，可用性高。5分</td></tr><tr><td class="readonly">2</td><td class="readonly">1、生成代码能否正确执行 2、是否与原代码实现功能相同 3、Prompt中涉及到执行效率的模型给的是否真能优化执行效率 4、添加注释是否符合，正常注释书写规范</td><td contenteditable="true">01：代码能正确执行；修改后的功能与原需求有偏差（按日期period_start排序，而不是平均营业额average_amount排序）；没有优化执行效率；注释规范。3分。 02： 代码能正确执行；解决方案过于简单；没有优化效率；没有对修改部分加以说明，注释规范。2分。 03： 代码能正确执行；与原代码实现功能相同；没有优化执行效率；注释规范。4分。 04：代码能正确执行；与原代码实现功能相同；优化了执行效率；注释规范。5分。</td></tr><tr><td class="readonly">3</td><td class="readonly">1、模型对于报错的分析是否正确 2、提供的解决方案可用性多大，不要只注意给出解决方案的多少</td><td contenteditable="true">01：对错误的分析较全面；解决方案较多，可用性较高。4分。 02：对错误的分析较全面；解决方案较实用，但缺乏深入的细节和步骤。4分 03：对错误的分析全面、准确，涵盖了多个方面；解决方法丰富，可用性高。5分 04：对错误的分析全面、准确，涵盖了多个方面；解决方法丰富，可用性高。5分</td></tr><tr><td class="readonly">4</td><td class="readonly">1、生成代码能否正确执行
+2、有无修改题目中已给的代码部分，要求是根据已有的扩展，不能对原有内容进行修改
+3、如果提供的部分有错误，模型能否识别修改</td><td contenteditable="true"><span style="color: rgba(0, 0, 0, 0.88); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 14px; white-space-collapse: preserve; background-color: rgb(245, 245, 245);">1、生成代码能否正确执行
+2、有无修改题目中已给的代码部分，要求是根据已有的扩展，不能对原有内容进行修改
+3、如果提供的部分有错误，模型能否识别修改</span></td></tr><tr><td class="readonly">5</td><td class="readonly">1、生成代码是否能够正确执行
+2、若无法正确执行，模型代码修改难易程度
+3、功能点是否全，有无错漏
+4、代码书写习惯是否良好</td><td contenteditable="true"><div>01：生成代码可以正确执行；功能点齐全；代码缺注释。4分</div><div>02：生成代码可以正确执行；功能点齐全；代码缺注释。4分</div><div>03：生成代码可以正确执行；功能点不全，比如缺安装celery、配置celery；代码书写习惯良好。3分</div><div>04：生成代码可以正确执行；功能点齐全；代码注释很少。4分</div></td></tr><tr><td class="readonly">行 6 列 1</td><td class="readonly">行 6 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 7 列 1</td><td class="readonly">行 7 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 8 列 1</td><td class="readonly">行 8 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 9 列 1</td><td class="readonly">行 9 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 10 列 1</td><td class="readonly">行 10 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 1 列 1</td><td class="readonly">行 1 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 2 列 1</td><td class="readonly">行 2 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 3 列 1</td><td class="readonly">行 3 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 4 列 1</td><td class="readonly">行 4 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 5 列 1</td><td class="readonly">行 5 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 6 列 1</td><td class="readonly">行 6 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 7 列 1</td><td class="readonly">行 7 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 8 列 1</td><td class="readonly">行 8 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 9 列 1</td><td class="readonly">行 9 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 10 列 1</td><td class="readonly">行 10 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 1 列 1</td><td class="readonly">输入</td><td class="readonly">输入</td></tr><tr><td class="readonly">行 2 列 1</td><td class="readonly">输入</td><td class="readonly">输入</td></tr><tr><td class="readonly">行 3 列 1</td><td class="readonly">无</td><td class="readonly">01：描述了基本步骤；容易理解；结构清晰。漏掉了安装插件步骤。3分。
+02：详细描述了步骤；容易理解；结构清晰。5分。
+03：描述了基本步骤；容易理解；结构清晰；但是不够详细具体，过于简单。4分。
+04：描述了基本步骤；容易理解；结构清晰；但是不够详细具体，过于简单。4分。</td></tr><tr><td class="readonly">行 4 列 1</td><td class="readonly">无</td><td class="readonly">01：解释基本正确，但对于 WHERE 和 HAVING 的使用场景和区别阐述条理不够清晰。4分。
+02：解释正确，详细描述了WHERE 和 HAVING 的使用场景和区别；容易理解；结构清晰。5分。
+03：解释正确，详细描述了WHERE 和 HAVING 的使用场景和区别；容易理解；结构清晰。5分。
+04：解释基本正确，容易理解；文字描述空洞，不够详细。代码示例太简单，不详细。4分</td></tr><tr><td class="readonly">行 5 列 1</td><td class="readonly">1、模型回复对于代码内容的解释是否完全正确，有无错误
+2、模型回复是否容易理解，能否让代码基础薄弱的也能理解内容
+3、解释结构是否清晰，与原代码块是否对应</td><td class="readonly">01：对于代码内容的解释较正确，容易理解，解释结构是否清晰，与原代码块是否对应；某些功能，比如 nodeLocalStorage解释不够详细。4分。
+02：对于代码内容的解释完全正确，容易理解，解释结构是否清晰，与原代码块是否对应。5分。
+03：对于代码内容的解释较正确，容易理解，解释结构是否清晰，对LocalStorage，没有详细描述。4分。
+04：对于代码内容的解释完全正确，容易理解，解释结构是否清晰，与原代码块是否对应。5分。</td></tr><tr><td class="readonly">行 6 列 1</td><td class="readonly">无</td><td contenteditable="true"><font color="rgba(0, 0, 0, 0.88)" face="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji"><span style="font-size: 14px; white-space-collapse: preserve;">01：解释详细，语言表达清楚，但是文字结构不是很清晰，缺乏条理。4分。
+02：解释正确，语言表达清楚，但是细节不够深入，例如开头没有介绍图染色法的使用场景寄存器分配策略。4分。 
+03：解释基本正确，条理清晰，容易理解，但描述过于空洞、简单，不够详细深入。4分
+04：解释详细，语言表达条理清晰，易于理解。5分</span></font></td></tr><tr><td class="readonly">行 7 列 1</td><td class="readonly">行 7 列 2</td><td contenteditable="true"><div>01：条理清晰，覆盖面多。但是描述过于简单，不够详细深入。4分</div><div>02：解释正确，表达清楚，但是覆盖面不够多。4分。&nbsp;</div><div>03：解释详细，语言表达条理清晰，易于理解。覆盖面多。5分</div><div>04：解释详细，语言表达条理清晰，易于理解。覆盖面多。5分</div></td></tr><tr><td class="readonly">行 8 列 1</td><td class="readonly">行 8 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 9 列 1</td><td class="readonly">行 9 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 10 列 1</td><td class="readonly">行 10 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">1</td><td class="readonly">行 1 列 2</td><td contenteditable="true">粉混合结构框架个计划工具钢聚光镜后果脚后跟经过客户客户客户看见艰苦户籍科户籍科好客户尽快客户看看客户开会开会开会艰苦环境和空间环境看皇家海军航空海军航空航海和客家话艰苦呱呱呱呱呱呱呱呱呱呱呱呱呱呱呱古古怪怪感觉哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈结果灌灌灌灌灌灌灌灌构建</td></tr><tr><td class="readonly">2</td><td class="readonly">行 2 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">3</td><td class="readonly">行 3 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">4</td><td class="readonly">行 4 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">5</td><td class="readonly">行 5 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 6 列 1</td><td class="readonly">行 6 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 7 列 1</td><td class="readonly">行 7 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 8 列 1</td><td class="readonly">行 8 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 9 列 1</td><td class="readonly">行 9 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 10 列 1</td><td class="readonly">行 10 列 2</td><td contenteditable="true"></td></tr>
+    </tbody>
+</table>
+
+
+</body></html>
