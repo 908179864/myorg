@@ -1,0 +1,153 @@
+
+
+<!DOCTYPE html>
+<!-- saved from url=(0041)file:///C:/Users/Lenovo/Desktop/1142.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    
+</head>
+<body><!-- 此为注释，回答1需要统计字数的文本域id命名为AnswerArea1 -->
+    <!-- 此为注释，回答2需要统计字数的文本域id命名为AnswerArea2 -->
+    <!-- 此为注释，回答3需要统计字数的文本域id命名为AnswerArea3-->
+    <!-- 此为注释，回答4需要统计字数的文本域id命名为AnswerArea4 -->
+    <!-- 此为注释，其他id命名保持不变 -->
+    <textarea id="textarea1" style="width: 50px; height: 100px;color: red;" readonly="">问题如下：</textarea>
+    <textarea id="textarea2" placeholder="请输入问题..." style="width: 300px; height: 100px;"></textarea>
+    <textarea id="textarea3" style="width: 50px; height: 100px;color: red;" readonly="">回答1如下：</textarea>
+<textarea id="AnswerArea1" placeholder="请输入回答1..." style="width: 300px; height: 100px;"></textarea>
+    
+<textarea id="textarea5" style="width: 50px; height: 100px;color: red;" readonly="">回答2如下：</textarea>
+<textarea id="AnswerArea2" placeholder="请输入回答2..." style="width: 300px; height: 100px;"></textarea>
+<textarea id="textarea7" style="width: 50px; height: 100px;color: red;" readonly="">回答3如下：</textarea>
+<textarea id="AnswerArea3" placeholder="请输入回答3..." style="width: 300px; height: 100px;"></textarea>
+<textarea id="textarea9" style="width: 50px; height: 100px;color: red;" readonly="">回答4如下：</textarea>
+<textarea id="AnswerArea4" placeholder="请输入回答4..." style="width: 300px; height: 100px;"></textarea>
+<textarea id="AnswerArea5_1" style="width: 50px; height: 100px;color: red;" readonly="">回答5如下：</textarea>
+<textarea id="AnswerArea5" placeholder="请输入回答5..." style="width: 300px; height: 100px;"></textarea>
+<textarea id="textarea11" style="width: 100px; height: 100px;color: red;" readonly="">请根据以下评判标准, 对上面的</textarea>
+<textarea id="textarea12" placeholder="请输入回答数量..." style="width: 100px; height: 100px;"></textarea>
+<textarea id="textarea13" style="width: 100px; height: 100px;color: red;" readonly="">个回答进行对比打分。评判标准：</textarea>
+    <textarea id="textarea14" placeholder="请输入评判标准..." style="width: 200px; height: 100px;"></textarea>
+    <textarea id="textarea15" placeholder="此为合并文本框..." style="width: 700px; height: 400px;"></textarea>
+    <br>
+    <button onclick="combineText()">合并内容</button>
+    <button onclick="copyText()">复制内容</button>
+    <button onclick="initializeText()">初始化</button>
+    <script>
+<!-- 此为注释开头，此函数作用：合并文本域内容，由于不够优化，已经弃用，作为注释学习用
+        function combineText() {
+            let text1 = document.getElementById("textarea1").value;
+            let text2 = document.getElementById("textarea2").value;
+            let text3 = document.getElementById("textarea3").value;
+            let Answer1 = document.getElementById("AnswerArea1").value;
+            let text5 = document.getElementById("textarea5").value;
+            let Answer2 = document.getElementById("AnswerArea2").value;
+            let text7 = document.getElementById("textarea7").value;
+            let Answer3 = document.getElementById("AnswerArea3").value;
+            let text9 = document.getElementById("textarea9").value;
+            let Answer4 = document.getElementById("AnswerArea4").value;
+            let Answer5_1 = document.getElementById("AnswerArea5_1").value;
+            let Answer5 = document.getElementById("AnswerArea5").value;
+            let text11 = document.getElementById("textarea11").value;
+            let text12 = document.getElementById("textarea12").value;
+            let text13 = document.getElementById("textarea13").value;
+            let text14 = document.getElementById("textarea14").value;
+            let combinedText = text1 + text2 + text3 + Answer1 + text5 + Answer2 + text7 +  Answer3 + text9 + Answer4 + Answer5_1+ Answer5+ text11 + text12 + text13 + text14;
+            document.getElementById("textarea15").value = combinedText;
+        }
+ 注释结尾-->
+
+<!-- 此为注释，此函数作用：合并文本域内容。优化代码可读性，提高代码的可维护性和可读性，使用数组或对象来管理多个文本域，而不是逐个获取和拼接。 -->
+     function combineText() {
+      	const textareas = [
+        "textarea1", "textarea2", "textarea3", "AnswerArea1",
+        "textarea5", "AnswerArea2", "textarea7", "AnswerArea3",
+        "textarea9", "AnswerArea4", "AnswerArea5_1", "AnswerArea5",
+        "textarea11", "textarea12", "textarea13", "textarea14"
+    ];
+    let combinedText = textareas.map(id => document.getElementById(id).value).join('');
+    document.getElementById("textarea15").value = combinedText;
+}
+
+        function copyText() {
+<!-- 此为注释，此函数作用：复制文本域内容 -->
+            let textToCopy = document.getElementById("textarea15").value;
+            navigator.clipboard.writeText(textToCopy);
+        }
+
+        function initializeText() {
+<!-- 此为注释，此函数作用：初始化网页 -->
+            document.getElementById("textarea1").value = "问题如下：";
+            document.getElementById("textarea2").value = "";
+            document.getElementById("textarea3").value = "回答1如下：";
+            document.getElementById("AnswerArea1").value = "";
+            document.getElementById("textarea5").value = "回答2如下：";            
+            document.getElementById("AnswerArea2").value = "";
+            document.getElementById("textarea7").value = "回答3如下：";            
+            document.getElementById("AnswerArea3").value = "";
+            document.getElementById("textarea9").value = "回答4如下：";            
+            document.getElementById("AnswerArea4").value = "";
+           document.getElementById("AnswerArea5_1").value = "回答5如下：";            
+            document.getElementById("AnswerArea5").value = "";
+            document.getElementById("textarea11").value = "请根据以下评判标准, 对上面的";
+            document.getElementById("textarea12").value = "";
+            document.getElementById("textarea13").value = "个回答进行打分。评判标准：";
+            document.getElementById("textarea14").value = "";
+            document.getElementById("textarea15").value = "";
+
+        }
+    </script>
+<table border="2">
+    <thead>
+        <tr>
+            <th class="readonly" style="width: 50px;">序号</th>
+            <th class="readonly" style="width: 300px;">评分标准</th>
+            <th class="center-align">评分依据</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- 生成10行 -->
+        <tr><td class="readonly">行 1 列 1</td><td class="readonly">行 1 列 2</td><td contenteditable="true"><span style="color: rgb(131, 131, 131); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; white-space-collapse: break-spaces; background-color: rgb(58, 58, 60);">01：解决方案多种多样；采用编号说明，结构清晰。但是略显简洁、不够深入、详细、专业。4分
+回答2：</span><span style="color: rgb(131, 131, 131); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; white-space-collapse: break-spaces; background-color: rgb(58, 58, 60);">解决方案多种多样；结构清晰；细节方面深入详细，比如原因、操作、使用建议很专业。5分</span></td></tr><tr><td class="readonly">1</td><td class="readonly">1、生成代码是否能够正确执行
+2、若无法正确执行，模型代码修改难易程度
+3、功能点是否全，有无错漏
+4、代码书写习惯是否良好。
+
+</td><td contenteditable="true">01：对错误的分析较全面；解决方案较多，可用性较高。4分。 02：对错误的分析较全面；解决方案较实用，但缺乏深入的细节和步骤。4分 03：对错误的分析全面、准确，涵盖了多个方面；解决方法丰富，可用性高。5分。04：对错误的分析全面、准确，涵盖了多个方面；解决方法丰富，可用性高。5分</td></tr><tr><td class="readonly">2</td><td class="readonly">1、生成代码能否正确执行 2、是否与原代码实现功能相同 3、Prompt中涉及到执行效率的模型给的是否真能优化执行效率 4、添加注释是否符合，正常注释书写规范</td><td contenteditable="true">01：代码能正确执行；与原代码实现功能相同；优化了执行效率；注释规范。5分。</td></tr><tr><td class="readonly">3</td><td class="readonly">1、模型对于报错的分析是否正确 2、提供的解决方案可用性多大，不要只注意给出解决方案的多少</td><td contenteditable="true">01：对错误的分析较全面；解决方案较多，可用性较高。4分。 02：对错误的分析较全面；解决方案较实用，但缺乏深入的细节和步骤。4分 03：对错误的分析全面、准确，涵盖了多个方面；解决方法丰富，可用性高。5分 04：对错误的分析全面、准确，涵盖了多个方面；解决方法丰富，可用性高。5分</td></tr><tr><td class="readonly">4</td><td class="readonly">1、生成代码能否正确执行
+2、有无修改题目中已给的代码部分，要求是根据已有的扩展，不能对原有内容进行修改
+3、如果提供的部分有错误，模型能否识别修改</td><td contenteditable="true"><span style="color: rgba(0, 0, 0, 0.88); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 14px; white-space-collapse: preserve; background-color: rgb(245, 245, 245);">01：代码可以正确执行；扩展了原代码；识别了原代码错误，并提供了修正代码。5分。<br></span></td></tr><tr><td class="readonly">5</td><td class="readonly">1、生成代码是否能够正确执行
+2、若无法正确执行，模型代码修改难易程度
+3、功能点是否全，有无错漏
+4、代码书写习惯是否良好</td><td contenteditable="true"><div>01：生成代码可以正确执行；功能点齐全；代码缺注释。4分</div><div>02：生成代码可以正确执行；功能点齐全；代码缺注释。4分</div><div>03：生成代码可以正确执行；功能点不全，比如缺安装celery、配置celery；代码书写习惯良好。3分</div><div>04：生成代码可以正确执行；功能点齐全；代码注释很少。4分</div></td></tr><tr><td contenteditable="true">行 1 列 1</td><td class="readonly">代码是否生成正确，代码可用性以及可理解性，是否需要配置较难的环境，算法复杂度</td></tr><tr><td class="readonly">行 2 列 1</td><td class="readonly">输入</td><td class="readonly">01，02，03相同点：三个答案，代码正确；结构清晰，易于理解；没有交互设计；Python 的环境中运行，无需额外配置；时间复杂度都是O(n)，空间复杂度都是O(n)。
+三者区别：01的解释最详细，03次之，02的描述过于简洁。01，03都给5分，02给4分。</td></tr><tr><td class="readonly">行 3 列 1</td><td class="readonly">无</td><td class="readonly">01：描述了基本步骤；容易理解；结构清晰。漏掉了安装插件步骤。3分。
+02：详细描述了步骤；容易理解；结构清晰。5分。
+03：描述了基本步骤；容易理解；结构清晰；但是不够详细具体，过于简单。4分。
+04：描述了基本步骤；容易理解；结构清晰；但是不够详细具体，过于简单。4分。</td></tr><tr><td class="readonly">行 4 列 1</td><td class="readonly">无</td><td class="readonly">01：解释基本正确，但对于 WHERE 和 HAVING 的使用场景和区别阐述条理不够清晰。4分。
+02：解释正确，详细描述了WHERE 和 HAVING 的使用场景和区别；容易理解；结构清晰。5分。
+03：解释正确，详细描述了WHERE 和 HAVING 的使用场景和区别；容易理解；结构清晰。5分。
+04：解释基本正确，容易理解；文字描述空洞，不够详细。代码示例太简单，不详细。4分</td></tr><tr><td class="readonly">行 5 列 1</td><td class="readonly">1、模型回复对于代码内容的解释是否完全正确，有无错误
+2、模型回复是否容易理解，能否让代码基础薄弱的也能理解内容
+3、解释结构是否清晰，与原代码块是否对应</td><td class="readonly">01：对于代码内容的解释完全正确；容易理解；解释结构清晰，与原代码块对应。5分。</td></tr><tr><td class="readonly">行 6 列 1</td><td class="readonly">无</td><td contenteditable="true"><font color="rgba(0, 0, 0, 0.88)" face="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji"><span style="font-size: 14px; white-space-collapse: preserve;">01：解释详细，语言表达清楚，但是文字结构不是很清晰，缺乏条理。4分。
+02：解释正确，语言表达清楚，但是细节不够深入，例如开头没有介绍图染色法的使用场景寄存器分配策略。4分。 
+03：解释基本正确，条理清晰，容易理解，但描述过于空洞、简单，不够详细深入。4分
+04：解释详细，语言表达条理清晰，易于理解。5分</span></font></td></tr><tr><td contenteditable="true">行 7 列 1</td><td contenteditable="true">行 7 列 2</td><td contenteditable="true"><div>01：条理清晰，覆盖面多。但是描述过于简单，不够详细深入。4分</div><div>02：解释正确，表达清楚，但是覆盖面不够多。4分。&nbsp;</div><div>03：解释详细，语言表达条理清晰，易于理解。覆盖面多。5分</div><div>04：解释详细，语言表达条理清晰，易于理解。覆盖面多。5分</div></td></tr><tr><td class="readonly">行 8 列 1</td><td class="readonly">1、生成代码是否能够正确执行
+2、若无法正确执行，模型代码修改难易程度
+3、功能点是否全，有无错漏
+4、代码书写习惯是否良好
+
+</td><td contenteditable="true"><font color="#ffffff" face="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji"><span style="white-space-collapse: break-spaces;">01，02，03相同点01，02，03相同点：三个答案，代码正确；结构清晰，易于理解；没有交互设计；Python 的环境中运行，无需额外配置；时间复杂度都是O(n)，空间复杂度都是O(n代码)。
+三者区别：01的解释最详细，03次之，02的描述过于简洁。01，03都给5分，02给4分。：三个答案，代码正确；结构清晰，易于理解；没有交互设计；Python 的环境中运行，无需额外配置；时间复杂度都是O(n)，空间复杂度都是O(n)。
+三者区别：01的解释最详细，03次之，02的描述过于简洁。01，03都给5分，02给4分。</span></font></td></tr><tr><td class="readonly">11</td><td class="readonly">代码是否生成正确，代码可用性以及可理解性，是否有交互设计（不作为扣分项，如果有可以排序靠前）是否需要配置较难的环境，算法复杂度</td><td contenteditable="true">01：代码正确；容易理解，；没有交互设计；环境配置容易；算法复杂度分析合理。5分。</td></tr><tr><td class="readonly">行 10 列 1</td><td class="readonly">行 10 列 2</td><td contenteditable="true">01：代码可以正确执行；功能点齐全；书写习惯好。5分。</td></tr><tr><td class="readonly">1</td><td class="readonly">行 1 列 2</td><td contenteditable="true">粉混合结构框架个计划工具钢聚光镜后果脚后跟经过客户客户客户看见艰苦户籍科户籍科好客户尽快客户看看客户开会开会开会艰苦环境和空间环境看皇家海军航空海军航空航海和客家话艰苦呱呱呱呱呱呱呱呱呱呱呱呱呱呱呱古古怪怪感觉哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈结果灌灌灌灌灌灌灌灌构建</td></tr><tr><td class="readonly">2</td><td class="readonly">1、 是否正确生成可执行的测试用例
+
+2、 注释内容是否与代码内容一致（注释描述该条测试内容是否与实际的代码矛盾）
+
+3、 测试用例覆盖的全面程度
+
+</td><td contenteditable="true"><br></td></tr><tr><td class="readonly">3</td><td class="readonly">行 3 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">4</td><td class="readonly">行 4 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">5</td><td class="readonly">行 5 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 6 列 1</td><td class="readonly">行 6 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 7 列 1</td><td class="readonly">行 7 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 8 列 1</td><td class="readonly">行 8 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 9 列 1</td><td class="readonly">行 9 列 2</td><td contenteditable="true"></td></tr><tr><td class="readonly">行 10 列 1</td><td class="readonly">行 10 列 2</td><td contenteditable="true"></td></tr>
+    </tbody>
+</table>
+
+
+</body></html>
