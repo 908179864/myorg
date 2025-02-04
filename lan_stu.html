@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>英文单词持续朗读器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #startButton {
+            background-color: #28a745;
+            color: white;
+        }
+        #startButton:hover {
+            background-color: #218838;
+        }
+        #stopButton {
+            background-color: #dc3545;
+            color: white;
+        }
+        #stopButton:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>英文单词持续朗读器</h2>
+    <input type="text" id="wordInput" placeholder="输入一个英文单词" />
+    <br />
+    <button id="startButton">开始朗读</button>
+    <button id="stopButton" disabled>停止朗读</button>
+</div>
+
+<script>
+    let speechSynthesisUtterance;
+    let isSpeaking = false;
+
+    const synth = window.speechSynthesis;
+
+    const startButton = document.getElementById('startButton');
+    const stopButton = document.getElementById('stopButton');
+    const wordInput = document.getElementById('wordInput');
+
+    startButton.addEventListener('click', () => {
+        const word = wordInput.value.trim();
+        if (!word) {
+            alert('请输入一个英文单词！');
+            return;
+        }
+
+        if (isSpeaking) {
+            alert('已经在朗读中！');
+            return;
+        }
+
+        speechSynthesis.cancel(); // 停止之前的朗读（如果有）
+
+        speechSynthesisUtterance = new SpeechSynthesisUtterance(word);
+
+        // 设置语音属性（可选）
+        speechSynthesisUtterance.rate = 1;    // 语速
+        speechSynthesisUtterance.pitch = 1;   // 音调
+        speechSynthesisUtterance.lang = 'en-US'; // 语言
+
+        // 监听结束事件，以实现循环朗读
+        speechSynthesisUtterance.onend = () => {
+            if (isSpeaking) {
+                speechSynthesis.speak(speechSynthesisUtterance);
+            }
+        };
+
+        speechSynthesis.speak(speechSynthesisUtterance);
+        isSpeaking = true;
+        startButton.disabled = true;
+        stopButton.disabled = false;
+    });
+
+    stopButton.addEventListener('click', () => {
+        if (isSpeaking) {
+            speechSynthesis.cancel();
+            isSpeaking = false;
+            startButton.disabled = false;
+            stopButton.disabled = true;
+        }
+    });
+</script>
+
+</body>
+</html>
+<!-- 注释开始：
+
+大多数现代浏览器在首次使用语音合成时会请求用户授权。确保允许网页访问语音功能。
+语音选择：
+
+你可以根据需要更改 speechSynthesisUtterance.lang 属性，选择不同的语音和语言。例如，'en-GB' 为英式英语。
+浏览器兼容性：
+
+虽然大多数现代浏览器支持 Web Speech API，但某些旧版本或特定浏览器可能存在兼容性问题。建议使用最新版本的 Chrome、Firefox 或 Edge 进行测试。注释结束--> 
